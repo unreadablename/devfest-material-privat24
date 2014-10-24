@@ -95,7 +95,7 @@ gulp.task('default', function() {
 //	gulp.watch(['./_views/**/*'], ['build-jade']);
 	gulp.watch(['./public/views/**/*'], ['build-jade']);
 	gulp.watch(['./_js/**/*'], ['build-js']);
-//	gulp.watch(['./_less/**/*'], ['build-less']);
+	gulp.watch(['./_less/**/*'], ['build-less']);
 
 
 	gulp.watch(['./app.js', './Gulpfile.js', './public/index.html', './public/partials/**/*'], function() {
