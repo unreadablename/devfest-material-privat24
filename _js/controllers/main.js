@@ -137,6 +137,18 @@
 
 			});
 		};
+
+		$scope.moneySent = function(ev) {
+			$mdDialog.show({
+				templateUrl: '/partials/money_sent.html',
+				targetEvent: ev,
+				controller: DialogController
+			}).then(function() {
+
+			}, function() {
+
+			});
+		};
 	}]);
 
 
