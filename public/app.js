@@ -34708,24 +34708,19 @@ angular.module('picardy.fontawesome', [])
 		};
 	});
 (function(){
-	'use strict';
+
 
 	var app = angular.module('privat24App', [
+
 		'ngRoute',
 		'ngMaterial',
 		'picardy.fontawesome'
 	])
-		.config(['$routeProvider', '$locationProvider', '$rootScope', function ($routeProvider, $locationProvider, $rootScope) {
+		.config(['$routeProvider',function ($routeProvider) {
 			$routeProvider
 				.when('/', {
 					templateUrl: '/partials/main.html',
-					controller: 'MainCtrl',
-					controllerAs: 'main'
-				})
-				.when('/all_services', {
-					templateUrl: '/partials/all_services.html',
-					controller: 'AllServicesCtrl',
-					controllerAs: 'services'
+					controller: 'MainCtrl'
 				})
 				.otherwise({
 					redirectTo: '/'
@@ -34734,6 +34729,30 @@ angular.module('picardy.fontawesome', [])
 
 //			$locationProvider.html5Mode(true).hashPrefix('!');
 		}]);
+
+
+//	app.controller("MainCtrl", ['$scope', function($scope) {
+//		$scope.selectedIndex = 0;
+//
+//		$scope.onTabSelected = onTabSelected;
+
+		// **********************************************************
+		// Private Methods
+		// **********************************************************
+
+//		function onTabSelected(tab) {
+//			alert(this.$index);
+////			$scope.selectedIndex = tab.$index;
+//
+////			$scope.announceSelected(tab);
+//		}
+
+//	}]);
+
+//	function MainCtrl($scope, Page) {
+//		console.log(Page);
+//		$scope.page= Page;
+//	}
 
 })();
 
@@ -34771,43 +34790,30 @@ angular.module('picardy.fontawesome', [])
 (function(){
 	'use strict';
 
-	angular.module("privat24App").
-		controller("AllServicesCtrl", function($scope, $rootScope) {
-	});
+	angular.module("privat24App").controller("AllServicesCtrl", ['$scope', function($scope) {
+		$scope.page = 2;
+	}]);
 
 })();
 (function(){
-	'use strict';
-
-	angular.module("privat24App").
-		controller("MainCtrl", function($scope, api, $rootScope) {
-		$scope.posts = api.getPosts();
-	});
-
-})();
-(function(){
-	'use strict';
 
 	angular.module("privat24App", [
 		'ngRoute',
 		'ngMaterial',
 		'picardy.fontawesome'
-	]).controller("ToolbarCtrl", ['$scope', function($scope) {
-		$scope.selectedIndex = 0;
-
-		$scope.onTabSelected = onTabSelected;
-
-		// **********************************************************
-		// Private Methods
-		// **********************************************************
-
-		function onTabSelected(tab) {
-			alert(this.$index);
-//			$scope.selectedIndex = tab.$index;
-
-//			$scope.announceSelected(tab);
-		}
-
+	]).controller("DashboardCtrl", ['$scope', function($scope) {
+		$scope.world = "FUCK YEAH";
 	}]);
+
+})();
+(function(){
+
+
+	angular.module("privat24App").controller("MainCtrl", ['$scope', 'api', function($scope, api) {
+//		$scope.posts = api.getPosts();
+		$scope.page = 1;
+	}]);
+
+
 
 })();
