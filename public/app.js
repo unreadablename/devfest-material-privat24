@@ -34778,7 +34778,7 @@ angular.module('picardy.fontawesome', [])
 		'ngMaterial',
 		'picardy.fontawesome'
 	]).controller("ToolbarCtrl", ['$scope', function($scope) {
-		$scope.selectedIndex = 0;
+		$scope.selectedIndex = 2;
 
 		$scope.onTabSelected = onTabSelected;
 
@@ -34787,6 +34787,7 @@ angular.module('picardy.fontawesome', [])
 		// **********************************************************
 
 		function onTabSelected(tab) {
+			alert(this.$index);
 //			$scope.selectedIndex = tab.$index;
 
 //			$scope.announceSelected(tab);
