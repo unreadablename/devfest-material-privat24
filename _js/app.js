@@ -6,7 +6,7 @@
 		'ngMaterial',
 		'picardy.fontawesome'
 	])
-		.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+		.config(['$routeProvider', '$locationProvider', '$rootScope', function ($routeProvider, $locationProvider, $rootScope) {
 			$routeProvider
 				.when('/', {
 					templateUrl: 'partials/main.html',
@@ -16,6 +16,7 @@
 				.otherwise({
 					redirectTo: '/'
 				});
+
 
 //			$locationProvider.html5Mode(true).hashPrefix('!');
 		}]);

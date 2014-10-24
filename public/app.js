@@ -34715,7 +34715,7 @@ angular.module('picardy.fontawesome', [])
 		'ngMaterial',
 		'picardy.fontawesome'
 	])
-		.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+		.config(['$routeProvider', '$locationProvider', '$rootScope', function ($routeProvider, $locationProvider, $rootScope) {
 			$routeProvider
 				.when('/', {
 					templateUrl: 'partials/main.html',
@@ -34725,6 +34725,7 @@ angular.module('picardy.fontawesome', [])
 				.otherwise({
 					redirectTo: '/'
 				});
+
 
 //			$locationProvider.html5Mode(true).hashPrefix('!');
 		}]);
@@ -34765,7 +34766,7 @@ angular.module('picardy.fontawesome', [])
 (function(){
 	'use strict';
 
-	angular.module("privat24App").controller("MainCtrl", ['$scope', 'api', function($scope, api) {
+	angular.module("privat24App").controller("MainCtrl", ['$scope', 'api', '$rootScope', function($scope, api, $rootScope) {
 		$scope.posts = api.getPosts();
 	}]);
 
