@@ -1,8 +1,11 @@
 (function(){
 	'use strict';
 
-	angular.module('privat24App', ['ngMaterial'])
-		.controller("MainCtrl", ['$scope', function($scope) {
+	angular.module('privat24App', [
+		'ngRoute',
+		'ngMaterial',
+		'picardy.fontawesome'
+	]).controller("MainCtrl", ['$scope', function($scope) {
 
 		$scope.tabs = [
 			{
