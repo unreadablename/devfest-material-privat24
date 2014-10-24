@@ -46,7 +46,7 @@ gulp.task('build-js', ['lint'], function() {
 
 gulp.task('build-less', function() {
 	gulp.src([
-//		'./bower_components/angular-material/angular-material.css',
+		'./bower_components/angular-material/angular-material.css',
 		'./bower_components/font-awesome/css/font-awesome.css',
 		'./_less/**/*',
 //		'./_js/*.js',
