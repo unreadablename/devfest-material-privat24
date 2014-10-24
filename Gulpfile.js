@@ -23,7 +23,7 @@ gulp.task('lint', function() {
 		.pipe(jshint.reporter('fail'));
 });
 
-gulp.task('build-js', ['lint'], function() {
+gulp.task('build-js', function() {
 	gulp.src([
 //		'./bower_components/hammerjs/hammer.js',
 		'./bower_components/angular/angular.js',
