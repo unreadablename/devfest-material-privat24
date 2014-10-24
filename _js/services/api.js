@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	angular.module("phoenixApp").factory("api", function() {
+	angular.module("privat24App").factory("api", function() {
 		var api = {};
 
 		api.getPosts = function(){

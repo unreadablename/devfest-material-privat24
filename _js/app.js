@@ -2,8 +2,8 @@
 	'use strict';
 
 	var app = angular.module('privat24App', [
-		'ngRoute'
-
+		'ngRoute',
+		'ngMaterial'
 	])
 		.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 			$routeProvider
