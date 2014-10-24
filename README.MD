@@ -1,0 +1,1 @@
+material privat24
