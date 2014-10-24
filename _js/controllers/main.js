@@ -1,9 +1,11 @@
 (function(){
-	'use strict';
 
-	angular.module("privat24App").
-		controller("MainCtrl", function($scope, api, $rootScope) {
-		$scope.posts = api.getPosts();
-	});
+
+	angular.module("privat24App").controller("MainCtrl", ['$scope', 'api', function($scope, api) {
+//		$scope.posts = api.getPosts();
+		$scope.page = 1;
+	}]);
+
+
 
 })();
