@@ -1,3 +1,29 @@
-<div ng-controller="TicketsCtrl">
-	dashboard
-</div>
+<md-content>
+
+	<md-list>
+
+		<md-whiteframe class="md-whiteframe-z1" layout ng-repeat="item in tickets" style="width: 500px; margin: 20px auto 0px; padding: 0px 20px;">
+		<md-item  style="width: 100%">
+
+			<md-item-content style="width: 100%">
+				<div class="md-tile-left">
+					<img ng-src="http://devfest.gdg.org.ua/img/favicons/favicon.ico" class="face" alt="GDG DevFest 201{{$index+3}}">
+				</div>
+				<div class="md-tile-content">
+					<h3>GDG DevFest 201{{$index+3}}</h3>
+					<h4>{{item.place}}</h4>
+					<p>
+						24-25.10.201{{$index+3}}
+					</p>
+				</div>
+				<div class="md-tile-content">
+					<md-button class="md-button-raised md-button-colored md-theme-green" ng-click="ticketBooked($event)">Забронировать</md-button>
+				</div>
+			</md-item-content>
+
+		</md-item>
+		</md-whiteframe>
+
+	</md-list>
+
+</md-content>

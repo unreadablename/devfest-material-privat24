@@ -149,6 +149,39 @@
 
 			});
 		};
+
+		$scope.ticketBooked = function(ev) {
+			$mdDialog.show({
+				templateUrl: '/partials/ticket_booked.html',
+				targetEvent: ev,
+				controller: DialogController
+			}).then(function() {
+
+			}, function() {
+
+			});
+		};
+
+		$scope.tickets = [
+			{
+				place: 'Kyiv',
+			},
+			{
+				place: 'Lviv',
+			},
+			{
+				place: 'Moscow',
+
+			},
+			{
+				place: 'Cherkasy',
+
+			},
+			{
+				place: 'Dnipropetrovsk',
+
+			}
+		]
 	}]);
 
 
