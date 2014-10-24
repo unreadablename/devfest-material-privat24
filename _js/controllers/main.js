@@ -4,7 +4,7 @@
 		'ngRoute',
 		'ngMaterial',
 		'picardy.fontawesome'
-	]).controller("MainCtrl", ['$scope', function($scope) {
+	]).controller("MainCtrl", ['$scope', '$timeout', '$mdSidenav', function($scope, $timeout, $mdSidenav) {
 
 		$scope.dashboard = {};
 		$scope.dashboard.todos = [
@@ -72,6 +72,16 @@
 		$scope.previous = function() {
 			$scope.data.selectedIndex = Math.max(0, ($scope.data.selectedIndex - 1));
 		};
+
+		$scope.my_counts = {};
+		$scope.my_counts.toggleLeft = function() {
+			$mdSidenav('my-count-left').toggle();
+		};
+
+		$scope.my_counts.close = function() {
+			$mdSidenav('my-count-left').close();
+		};
+
 
 	}]);
 
