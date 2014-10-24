@@ -5,8 +5,8 @@
     <div layout="horizontal" layout-align="center">
       <md-card class="dashboard_card">
         <h2 class="dashboard_card__header">
-          <fa name="credit-card"></fa>
-          Выписки
+            <fa name="credit-card"></fa>
+            Выписки
         </h2>
 
         <div>
@@ -40,12 +40,15 @@
         <div class="dashboard_card__content">
           <form>
             <div class="row">
-              <md-text-float label="Номер мобильного" ng-model="payment.number"></md-text-float>
-              <md-text-float label="Сумма пополнения" ng-model="payment.sum" class="long"></md-text-float>
+              <md-text-float class="b-mobile__input" label="Номер мобильного"></md-text-float>
+              <md-text-float class="b-mobile__input" label="Сумма пополнения"></md-text-float>
+              <select class="b-mobile__custom_select">
+                <option ng-repeat="item in dashboard.cards">{{item.name}} &ndash; **{{item.digits}} &ndash; {{item.balance}}{{item.currency}}</option>
+              </select>
             </div>
           </form>
           <section layout="vertical" layout-sm="horizontal" layout-align="center center">
-            <md-button class="md-theme-green">Пополнить</md-button>
+            <md-button class="b-mobile__button md-theme-green" ng-click="accountFilled($event)">Пополнить</md-button>
           </section>
         </div>
       </md-card>
@@ -83,8 +86,21 @@
         </h2>
 
         <div class="dashboard_card__content">
-          The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-          two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          <form>
+            <div class="row">
+              <md-text-float class="b-mobile__input" label="Сумма"></md-text-float>
+              <select class="b-mobile__custom_select">
+                <option ng-repeat="item in dashboard.cards">{{item.name}} &ndash; **{{item.digits}} &ndash; {{item.balance}}{{item.currency}}</option>
+              </select>
+              <select class="b-mobile__custom_select">
+                <option ng-repeat="item in dashboard.cards">{{item.name}} &ndash; **{{item.digits}} &ndash; {{item.balance}}{{item.currency}}</option>
+              </select>
+            </div>
+          </form>
+
+          <section layout="vertical" layout-sm="horizontal" layout-align="center center">
+            <md-button class="b-mobile__button md-theme-green" ng-click="moneySent($event)">Отправить</md-button>
+          </section>
         </div>
       </md-card>
     </div>
@@ -98,8 +114,23 @@
         </h2>
 
         <div class="dashboard_card__content">
-          The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-          two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          <form>
+            <div class="row">
+              <md-text-float class="b-mobile__input" label="Сумма"></md-text-float>
+
+              <select class="b-mobile__custom_select">
+                <option ng-repeat="item in dashboard.charities">{{item.name}}</option>
+              </select>
+
+              <select class="b-mobile__custom_select">
+                <option ng-repeat="item in dashboard.cards">{{item.name}} &ndash; **{{item.digits}} &ndash; {{item.balance}}{{item.currency}}</option>
+              </select>
+
+            </div>
+          </form>
+          <section layout="vertical" layout-sm="horizontal" layout-align="center center">
+            <md-button class="b-mobile__button md-theme-green" ng-click="charityConfirm($event)">Пожертвовать</md-button>
+          </section>
         </div>
       </md-card>
 
