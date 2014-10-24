@@ -6,7 +6,7 @@
 		'ngMaterial',
 		'picardy.fontawesome'
 	]).controller("ToolbarCtrl", ['$scope', function($scope) {
-		$scope.selectedIndex = 2;
+		$scope.selectedIndex = 0;
 
 		$scope.onTabSelected = onTabSelected;
 

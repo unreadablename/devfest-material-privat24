@@ -34718,9 +34718,14 @@ angular.module('picardy.fontawesome', [])
 		.config(['$routeProvider', '$locationProvider', '$rootScope', function ($routeProvider, $locationProvider, $rootScope) {
 			$routeProvider
 				.when('/', {
-					templateUrl: 'partials/main.html',
+					templateUrl: '/partials/main.html',
 					controller: 'MainCtrl',
 					controllerAs: 'main'
+				})
+				.when('/all_services', {
+					templateUrl: '/partials/all_services.html',
+					controller: 'AllServicesCtrl',
+					controllerAs: 'services'
 				})
 				.otherwise({
 					redirectTo: '/'
@@ -34766,9 +34771,18 @@ angular.module('picardy.fontawesome', [])
 (function(){
 	'use strict';
 
-	angular.module("privat24App").controller("MainCtrl", ['$scope', 'api', '$rootScope', function($scope, api, $rootScope) {
+	angular.module("privat24App").
+		controller("AllServicesCtrl", function($scope, $rootScope) {
+	});
+
+})();
+(function(){
+	'use strict';
+
+	angular.module("privat24App").
+		controller("MainCtrl", function($scope, api, $rootScope) {
 		$scope.posts = api.getPosts();
-	}]);
+	});
 
 })();
 (function(){
@@ -34779,7 +34793,7 @@ angular.module('picardy.fontawesome', [])
 		'ngMaterial',
 		'picardy.fontawesome'
 	]).controller("ToolbarCtrl", ['$scope', function($scope) {
-		$scope.selectedIndex = 2;
+		$scope.selectedIndex = 0;
 
 		$scope.onTabSelected = onTabSelected;
 
