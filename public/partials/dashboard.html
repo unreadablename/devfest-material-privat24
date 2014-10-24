@@ -1,4 +1,4 @@
-<div ng-controller="DashboardCtrl">
+
 
   <md-content>
 
@@ -11,7 +11,7 @@
 
         <div>
           <md-list>
-            <md-item ng-repeat="item in cards">
+            <md-item ng-repeat="item in dashboard.cards">
               <div layout="horizontal" class="b-credit-card">
                 <div flex class="b-credit-card__left">
                   <h3 class="b-credit-card__name">{{item.name}}</h3>
@@ -59,7 +59,7 @@
 
         <div class="dashboard_card__content">
           <md-list>
-            <md-item ng-repeat="item in todos">
+            <md-item ng-repeat="item in dashboard.todos">
               <div class="md-tile-left">
                 <fa class="md-tile-icon" name="{{item.icon}}" size="2"></fa>
               </div>
@@ -119,4 +119,3 @@
 </div>
 
 </md-content>
-</div>

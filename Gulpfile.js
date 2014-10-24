@@ -37,7 +37,7 @@ gulp.task('build-js', function() {
 
 		'./_js/app.js',
 		'./_js/services/**/*.js',
-		'./_js/controllers/**/*.js'
+		'./_js/controllers/main.js',
 	])
 		.pipe(concat('app.js'))
 //		.pipe(uglify())

@@ -1,5 +1,4 @@
 (function(){
-	'use strict';
 
 	angular.module('privat24App', [
 		'ngRoute',
@@ -7,25 +6,57 @@
 		'picardy.fontawesome'
 	]).controller("MainCtrl", ['$scope', function($scope) {
 
-		$scope.tabs = [
+		$scope.dashboard = {};
+		$scope.dashboard.todos = [
 			{
-				partial: 'dashboard'
+				icon : 'lightbulb-o',
+				what: 'Облэнерго',
+				when: '3:08PM',
+				notes: "вул. Соломії Крушельницької 3, Львів, Львовська обл., 79000"
 			},
 			{
-				partial: 'my_counts'
+				icon : 'drupal',
+				what: 'Водоканал и канализация',
+				when: '3:08PM',
+				notes: "вул. Соломії Крушельницької 3, Львів, Львовська обл., 79000"
 			},
 			{
-				partial: 'all_services'
+				icon : 'cloud',
+				what: 'Газ',
+				when: '3:08PM',
+				notes: "вул. Соломії Крушельницької 3, Львів, Львовська обл., 79000"
+			}
+		];
+
+		$scope.dashboard.cards = [
+			{
+				name: 'Internet Card',
+				digits: '2409',
+				currency: 'дол',
+				balance: '1.47',
+				last_update: '22.10.2014 16:47'
 			},
 			{
-				partial: 'my_payments'
+				name: 'Patriotic Card',
+				digits: '9749',
+				currency: 'грн',
+				balance: '5420.44',
+				last_update: '22.10.2014 16:47'
 			},
 			{
-				partial: 'deposites'
+				name: 'Карта для выплат',
+				digits: '6772',
+				currency: 'дол',
+				balance: '192.12',
+				last_update: '22.10.2014 16:47'
 			},
 			{
-				partial: 'tickets'
-			},
+				name: 'Пенсионная карта',
+				digits: '4703',
+				currency: 'грн',
+				balance: '0.00',
+				last_update: '22.10.2014 16:47'
+			}
 		];
 
 		$scope.data = {
