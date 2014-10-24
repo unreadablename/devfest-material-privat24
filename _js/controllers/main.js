@@ -83,6 +83,39 @@
 		};
 
 
+
+		$scope.all_services = {};
+		$scope.all_services.toggleLeft = function() {
+			$mdSidenav('all-services-left').toggle();
+		};
+
+		$scope.all_services.close = function() {
+			$mdSidenav('all-services-left').close();
+		};
+
+
+
+		$scope.my_payments = {};
+		$scope.my_payments.toggleLeft = function() {
+			$mdSidenav('my-payments-left').toggle();
+		};
+
+		$scope.my_payments.close = function() {
+			$mdSidenav('my-payments-left').close();
+		};
+
+
+
+		$scope.deposites = {};
+		$scope.deposites.toggleLeft = function() {
+			$mdSidenav('deposites-left').toggle();
+		};
+
+		$scope.deposites.close = function() {
+			$mdSidenav('deposites-left').close();
+		};
+
+		
 	}]);
 
 
