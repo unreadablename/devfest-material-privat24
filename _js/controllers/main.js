@@ -4,7 +4,7 @@
 		'ngRoute',
 		'ngMaterial',
 		'picardy.fontawesome'
-	]).controller("MainCtrl", ['$scope', '$timeout', '$mdSidenav', function($scope, $timeout, $mdSidenav) {
+	]).controller("MainCtrl", ['$scope', '$timeout', '$mdSidenav', '$mdDialog', function($scope, $timeout, $mdSidenav, $mdDialog) {
 
 		$scope.dashboard = {};
 		$scope.dashboard.todos = [
@@ -115,7 +115,28 @@
 			$mdSidenav('deposites-left').close();
 		};
 
-		
+
+		function DialogController($scope, $mdDialog) {
+			$scope.hide = function() {
+				$mdDialog.hide();
+			};
+
+			$scope.answer = function(answer) {
+				$mdDialog.hide(answer);
+			};
+		}
+
+		$scope.accountFilled = function(ev) {
+			$mdDialog.show({
+				templateUrl: '/partials/account_filled.html',
+				targetEvent: ev,
+				controller: DialogController
+			}).then(function() {
+
+			}, function() {
+
+			});
+		};
 	}]);
 
 
