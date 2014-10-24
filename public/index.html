@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="privat24App" ng-controller="DocsCtrl" lang="en" class="ng-scope">
+<html ng-app="privat24App" lang="en">
 <head>
 	<title ng-bind="(menu.currentSection.name || 'Material Design') + (menu.currentPage ? (' &gt; ' + (menu.currentPage | humanizeDoc)) : '')" class="ng-binding">Material Design</title>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -9,8 +9,10 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body layout="horizontal">
-<fa name="loading" spin ng-style="color:blue"></fa>
-<i class="fa fa-loading fa-spin" style="color:blue;"></i>
+<div data-ng-view=""></div>
+
+<fa name="camera-retro" spin ng-style="color:blue"></fa>
+
 
 </body>
 </html>
