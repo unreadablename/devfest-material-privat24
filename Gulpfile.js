@@ -25,11 +25,12 @@ gulp.task('lint', function() {
 
 gulp.task('build-js', ['lint'], function() {
 	gulp.src([
+//		'./bower_components/hammerjs/hammer.js',
 		'./bower_components/angular/angular.js',
 		'./bower_components/angular-animate/angular-animate.js',
 		'./bower_components/angular-aria/angular-aria.js',
 		'./bower_components/angular-material/angular-material.js',
-		'./bower_components/hammerjs/hammerjs.js',
+
 
 		'./bower_components/angular-route/angular-route.js',
 		'./bower_components/angular-fontawesome/dist/angular-fontawesome.js',
@@ -39,14 +40,14 @@ gulp.task('build-js', ['lint'], function() {
 		'./_js/controllers/**/*.js'
 	])
 		.pipe(concat('app.js'))
-		.pipe(uglify())
+//		.pipe(uglify())
 		.pipe(gulp.dest('./public/'));
 });
 
 gulp.task('build-less', function() {
 	gulp.src([
-		'./bower_components/angular-material/angular-material.css',
-		'./bower_components/fontawesome/css/font-awesome.css',
+//		'./bower_components/angular-material/angular-material.css',
+		'./bower_components/font-awesome/css/font-awesome.css',
 		'./_less/**/*',
 //		'./_js/*.js',
 	])
@@ -54,14 +55,14 @@ gulp.task('build-less', function() {
 		.pipe(concat('style.css'))
 		.pipe(less())
 //		.pipe(uglify())
-		.pipe(gulp.dest('./public/'));
+		.pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('build-assets', function() {
 	gulp.src([
 //		'./_fonts/**/*',
 //		'./bower_components/bootstrap-less/fonts/**/*',
-		'./bower_components/fontawesome/fonts/**/*',
+		'./bower_components/font-awesome/fonts/**/*',
 	])
 		.pipe(gulp.dest('./public/fonts'));
 
@@ -97,7 +98,7 @@ gulp.task('default', function() {
 //	gulp.watch(['./_less/**/*'], ['build-less']);
 
 
-	gulp.watch(['./app.js', './Gulpfile.js'], function() {
+	gulp.watch(['./app.js', './Gulpfile.js', './public/index.html', './public/partials/**/*'], function() {
 		gulp.run('run');
 	});
 

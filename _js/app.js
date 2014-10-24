@@ -3,7 +3,8 @@
 
 	var app = angular.module('privat24App', [
 		'ngRoute',
-		'ngMaterial'
+		'ngMaterial',
+		'picardy.fontawesome'
 	])
 		.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 			$routeProvider
