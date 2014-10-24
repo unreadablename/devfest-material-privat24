@@ -8,19 +8,53 @@
 			<md-button ng-click="my_payments.close()" class="md-button-colored" hide-md>
 				Скрыть
 			</md-button>
-			<p hide show-md>
-				This sidenav is locked open on your device. To go back to the default behavior,
-				narrow your display.
-			</p>
+      <md-list hide show-md>
+        <md-item ng-repeat="item in dashboard.cards">
+          <div layout="horizontal" class="b-credit-card">
+            <div flex class="b-credit-card__left">
+              <h3 class="b-credit-card__name">{{item.name}}</h3>
+              <h4 class="b-credit-card__digits">**{{item.digits}}</h4>
+            </div>
+            <div flex class="b-credit-card__right">
+              <h3 class="b-credit-card__balance">{{item.balance}}
+                <span class="b-credit-card__currency">{{item.currency}}</span>
+              </h3>
+              <h4 class="b-credit-card__last_update">на {{item.last_update}}</h4>
+            </div>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+        </md-item>
+      </md-list>
 		</md-content>
 	</md-sidenav>
 
 	<md-content flex class="md-content-padding">
 
 		<div layout="vertical" layout-fill layout-align="center center">
-			<p>
-				The left sidenav will 'lock open' on a medium (>=960px wide) device.
-			</p>
+      <md-content>
+
+          <md-list>
+
+            <md-whiteframe class="md-whiteframe-z1" layout ng-repeat="item in tickets" style="width: 500px; margin: 20px auto 0px; padding: 0px 20px;">
+              <md-item  style="width: 100%">
+
+                <md-item-content style="width: 100%">
+                  <div class="md-tile-content">
+                    <h3>Transaction {{$index}}</h3>
+                    <h4>{{item.place}}</h4>
+                    <p>
+                      24-25.10.201{{$index+3}}
+                    </p>
+                  </div>
+                  <div class="md-tile-content">
+                    <md-button class="md-button-raised md-button-colored md-theme-green">${{13+$index*150}}</md-button>
+                  </div>
+                </md-item-content>
+
+              </md-item>
+            </md-whiteframe>
+
+          </md-list>
 
 			<div>
 				<md-button ng-click="my_payments.toggleLeft()"
