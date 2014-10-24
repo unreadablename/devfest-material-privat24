@@ -1,0 +1,16 @@
+{
+  "name": "privat24",
+  "version": "0.0.0",
+  "homepage": "https://github.com/unreadableusername/devfest-material-privat24",
+  "authors": [
+    "Oleksandr Pidlisnyi <linmas.org@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
