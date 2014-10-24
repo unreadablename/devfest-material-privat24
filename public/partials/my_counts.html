@@ -8,10 +8,24 @@
 			<md-button ng-click="my_counts.close()" class="md-button-colored" hide-md>
 				Close Sidenav Left
 			</md-button>
-			<p hide show-md>
-				This sidenav is locked open on your device. To go back to the default behavior,
-				narrow your display.
-			</p>
+
+        <md-list hide show-md>
+          <md-item ng-repeat="item in dashboard.cards">
+            <div layout="horizontal" class="b-credit-card">
+              <div flex class="b-credit-card__left">
+                <h3 class="b-credit-card__name">{{item.name}}</h3>
+                <h4 class="b-credit-card__digits">**{{item.digits}}</h4>
+              </div>
+              <div flex class="b-credit-card__right">
+                <h3 class="b-credit-card__balance">{{item.balance}}
+                  <span class="b-credit-card__currency">{{item.currency}}</span>
+                </h3>
+                <h4 class="b-credit-card__last_update">на {{item.last_update}}</h4>
+              </div>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-item>
+        </md-list>
 		</md-content>
 	</md-sidenav>
 
