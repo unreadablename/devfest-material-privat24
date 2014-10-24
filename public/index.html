@@ -16,22 +16,22 @@
 		<div class="md-toolbar-tools" layout="horizontal">
 			<md-tabs selected="data.selectedIndex"  center class="md-theme-green">
 				<md-tab class="md-theme-green">
-					<md-tab-label><a href="#home">Главная</a></md-tab-label>
+					<md-tab-label>Главная</md-tab-label>
 				</md-tab>
 				<md-tab class="md-theme-green">
-					<md-tab-label><a href="#my_counts"><fa name="credit-card"></fa> Мои счета</a></md-tab-label>
+					<md-tab-label><fa name="credit-card"></fa> Мои счета</md-tab-label>
 				</md-tab>
 				<md-tab class="md-theme-green">
-					<md-tab-label><a href="#all_services"><fa name="list"></fa> Все услуги</a></md-tab-label>
+					<md-tab-label><fa name="list"></fa> Все услуги</md-tab-label>
 				</md-tab>
 				<md-tab class="md-theme-green">
-					<md-tab-label><a href="#my_payments"><fa name="home"></fa> Мои платежи</a></md-tab-label>
+					<md-tab-label><fa name="home"></fa> Мои платежи</md-tab-label>
 				</md-tab>
 				<md-tab class="md-theme-green">
-					<md-tab-label><a href="#deposites"><fa name="money"></fa> Депозиты</a></md-tab-label>
+					<md-tab-label><fa name="money"></fa> Депозиты</md-tab-label>
 				</md-tab>
 				<md-tab class="md-theme-green">
-					<md-tab-label><a href="#tickets"><fa name="ticket"></fa> Билеты</a></md-tab-label>
+					<md-tab-label><fa name="ticket"></fa> Билеты</md-tab-label>
 				</md-tab>
 			</md-tabs>
 
@@ -44,79 +44,22 @@
 		<div class="animate-switch tab1" ng-switch-when="0" md-swipe-left="next()" md-swipe-right="previous()" >
 			<ng-include src="'/partials/dashboard.html'"></ng-include>
 		</div>
-		<div class="animate-switch tab2"
-		     ng-switch-when="1"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for {{data.label2}}<br/>
-			Selection index = 1
+		<div class="animate-switch tab2" ng-switch-when="1" md-swipe-left="next()" md-swipe-right="previous()" >
+			<ng-include src="'/partials/my_counts.html'"></ng-include>
 		</div>
-		<div class="animate-switch tab3"
-		     ng-switch-when="2"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #3<br/>
-			Selection index = 2
+		<div class="animate-switch tab3" ng-switch-when="2" md-swipe-left="next()" md-swipe-right="previous()" >
+			<ng-include src="'/partials/all_services.html'"></ng-include>
 		</div>
-		<div class="animate-switch tab4"
-		     ng-switch-when="3"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #4<br/>
-			Selection index = 3
+		<div class="animate-switch tab4" ng-switch-when="3" md-swipe-left="next()" md-swipe-right="previous()" >
+			<ng-include src="'/partials/my_payments.html'"></ng-include>
 		</div>
-		<div class="animate-switch tab5"
-		     ng-switch-when="4"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #5<br/>
-			Selection index = 4
+		<div class="animate-switch tab5" ng-switch-when="4" md-swipe-left="next()" md-swipe-right="previous()" >
+			<ng-include src="'/partials/deposites.html'"></ng-include>
 		</div>
-		<div class="animate-switch tab6"
-		     ng-switch-when="5"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #6<br/>
-			Selection index = 5
-		</div>
-		<div class="animate-switch tab7"
-		     ng-switch-when="6"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #7<br/>
-			Selection index = 6
-		</div>
-		<div class="animate-switch tab8"
-		     ng-switch-when="7"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #8<br/>
-			Selection index = 7
-		</div>
-		<div class="animate-switch tab9"
-		     ng-switch-when="8"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #9<br/>
-			Selection index = 8
-		</div>
-		<div class="animate-switch tab10"
-		     ng-switch-when="9"
-		     md-swipe-left="next()"
-		     md-swipe-right="previous()" >
-			View for Item #10<br/>
-			Selection index = 9
+		<div class="animate-switch tab6" ng-switch-when="5" md-swipe-left="next()" md-swipe-right="previous()" >
+			<ng-include src="'/partials/tickets.html'"></ng-include>
 		</div>
 	</div>
-	<!--<ng-include src="'/partials/toolbar.html'"></ng-include>-->
-
-	<ng-include src="'/partials/dashboard.html'"></ng-include>
-
-	<md-content>
-		<div ng-view=""></div>
-		<!--<ng-view></ng-view>-->
-		<!--<ng-include src="'/partials/main.html'"></ng-include>-->
-	</md-content>
 </div>
 
 </body>
